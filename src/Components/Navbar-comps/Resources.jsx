@@ -1,24 +1,25 @@
 import React from "react";
+import "./Resources.css";
 
 const Resources = () => {
   const books = [
     {
       id: 1,
       name: "Angleren - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_1%202017-18.pdf", // Replace with actual PDF URL
+      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_1%202017-18.pdf",
       image: "book1.png",
     },
     {
       id: 2,
       name: "Angleren - shtemaran 2",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_2%202017-18.pdf", // Replace with actual PDF URL
-      image: "book2.png", // Replace with actual image URL
+      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_2%202017-18.pdf",
+      image: "book2.png",
     },
     {
       id: 3,
       name: "Angleren - shtemaran 3",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_3%202017-18.pdf", // Replace with actual PDF URL
-      image: "book3.png", // Replace with actual image URL
+      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_3%202017-18.pdf",
+      image: "book3.png",
     },
     {
       id: 4,
@@ -35,7 +36,7 @@ const Resources = () => {
     {
       id: 6,
       name: "Ruseren - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Russian_3.pdf", // Replace with actual PDF URL
+      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Russian_3.pdf",
       image: "book6.jpg",
     },
     {

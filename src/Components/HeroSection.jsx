@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import "./HeroSection.css";
 
 const HeroSection = () => {
     return ( 
@@ -17,7 +18,7 @@ const HeroSection = () => {
             Join us and take the first step towards a successful academic journey with confidence!
             </p>
             <div className="buttons">
-              <Link to="/tests" className="btn-primary">Take a test!</Link>
+              <Link to="/questionnaire" className="btn-primary">Take a test!</Link>
             </div>
           </div>
         </div>

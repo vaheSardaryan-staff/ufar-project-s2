@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./SignInUp.css";
 
 const SignUp = () => {
   useEffect(() => {
@@ -26,18 +27,40 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
+  
     if (!formData.agreeToTerms) {
       alert("You must agree to the terms and conditions!");
       return;
     }
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+  
+    try {
+      const response = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to sign up");
+      }
+  
+      const result = await response.json();
+      console.log("Sign-up successful:", result);
+      alert("Sign-up successful!");
+    } catch (error) {
+      console.error("Error during sign-up:", error);
+      alert("Failed to sign up. Please try again.");
+    }
   };
 
   return (

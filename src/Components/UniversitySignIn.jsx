@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./SignInUp.css";
 
 const UniversitySignIn = () => {
   useEffect(() => {
@@ -20,13 +21,12 @@ const UniversitySignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Form submitted:", formData);
   };
 
   return (
     <div className="university-auth-page">
-      <h1 className="university-auth-title">University Login</h1>
+      <h1 className="university-auth-title">Entreprise Sign in</h1>
       <p className="university-auth-subtitle">Sign in to your account</p>
       <form className="university-auth-form" onSubmit={handleSubmit}>
         <input

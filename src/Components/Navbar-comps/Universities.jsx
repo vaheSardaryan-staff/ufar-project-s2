@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Universities.css";
 
 const Universities = () => {
   const universities = [
@@ -59,11 +60,9 @@ const Universities = () => {
         <h1 className="text-center my-4">Universities</h1>
         <p className="text-center mb-4">Explore top universities around the world.</p>
 
-        {/* University Cards */}
         {universities.map((university) => (
           <div key={university.id} className="unique-university-card mb-4">
             <div className="row g-0">
-              {/* University Image */}
               <div className="col-md-4">
                 <img
                   src={university.image}
@@ -72,7 +71,6 @@ const Universities = () => {
                 />
               </div>
 
-              {/* University Info */}
               <div className="col-md-8">
                 <div className="unique-card-body">
                   <h5 className="unique-card-title">{university.name}</h5>

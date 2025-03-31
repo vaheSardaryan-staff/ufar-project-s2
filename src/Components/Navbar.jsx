@@ -8,12 +8,12 @@ const Navbar = () => {
         <div className="header-content">
           <div className="logo">
             <Link to="/">
-              <img className="logo-img" src="img.png" alt="Logo" />
+              <img className="logo-img" src="/img.png" alt="Logo" />
             </Link>
           </div>
           <nav className="nav-menu">
             <Link to="/universities">Universities</Link>
-            <Link to="/tests">Tests</Link>
+            <Link to="/careers">Career Path</Link>
             <Link to="/resources">Resources</Link>
             <div className="separator"></div>
             <div className="dropdown">
@@ -24,7 +24,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="dropdown">
-              <button className="cta-button dropdown-toggle">For universities</button>
+              <button className="cta-button dropdown-toggle">For entreprises</button>
               <div className="dropdown-menu">
                 <Link to="/university-signup">Sign up</Link>
                 <Link to="/university-signin">Sign in</Link>

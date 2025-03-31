@@ -1,0 +1,268 @@
+.auth-page-full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8, #d9e8f5);
+    padding: 20px;
+  }
+  .auth-title {
+    font-size: 2.5rem;
+    color: #00788a;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .auth-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .auth-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .auth-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .auth-form input:focus {
+    outline: none;
+    border-color: #00788a;
+    box-shadow: 0 0 5px rgba(0, 120, 138, 0.5);
+  }
+  .auth-button {
+    background-color: #00788a;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .auth-button:hover {
+    background-color: #005f6b;
+    transform: scale(1.05);
+  }
+  .auth-footer {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .auth-footer a {
+    color: #00788a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .auth-footer a:hover {
+    text-decoration: underline;
+  }
+
+.auth-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
+    appearance: none; 
+    cursor: pointer;
+  }
+  
+  .auth-form select:focus {
+    outline: none;
+    border-color: #00788a;
+    box-shadow: 0 0 5px rgba(0, 120, 138, 0.5);
+  }
+  
+  
+  .auth-form select::-ms-expand {
+    display: none; 
+  }
+  
+  .auth-form select:after {
+    content: "▼"; 
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #00788a; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .checkbox-container label {
+    font-size: 1rem;
+    color: #555;
+    cursor: pointer; 
+  }
+  
+  .checkbox-container label span {
+    color: #00788a;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .checkbox-container label span:hover {
+    color: #005f6b;
+  }
+  
+  
+  .university-auth-page {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .university-auth-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00788a;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .university-auth-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  
+  .university-auth-form {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  
+  .radio-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .radio-container label {
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .radio-container input[type="radio"] {
+    accent-color: #00788a;
+    transform: scale(1.2);
+  }
+  
+  
+  .university-auth-form input[type="text"],
+  .university-auth-form input[type="tel"],
+  .university-auth-form input[type="email"],
+  .university-auth-form input[type="password"],
+  .university-auth-form input[type="file"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .university-auth-form input[type="text"]:focus,
+  .university-auth-form input[type="tel"]:focus,
+  .university-auth-form input[type="email"]:focus,
+  .university-auth-form input[type="password"]:focus,
+  .university-auth-form input[type="file"]:focus {
+    border-color: #00788a;
+  }
+  
+  
+  .file-input-container {
+    margin-top: 20px;
+  }
+  
+  .file-input-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    accent-color: #00788a;
+    transform: scale(1.2);
+  }
+  
+  .checkbox-container label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .checkbox-container span {
+    color: #00788a;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  
+  .university-auth-button {
+    background: #00788a;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .university-auth-button:hover {
+    background: #005f6b;
+  }

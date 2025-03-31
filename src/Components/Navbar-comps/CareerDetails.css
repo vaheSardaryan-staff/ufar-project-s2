@@ -1,0 +1,120 @@
+.career-details-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .career-header {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .career-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #00788a;
+  }
+  
+  .career-header-content {
+    flex: 1;
+  }
+  
+  .career-header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00788a;
+    margin: 0;
+  }
+  
+  .career-header-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .career-header-meta span {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  
+  .career-divider {
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    margin: 20px 0;
+  }
+  
+  
+  .career-details {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .career-details-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .career-details-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  
+  .related-items {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .related-item {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .related-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .related-item-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00788a;
+    margin: 0;
+  }
+  
+  .related-item-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+  }
