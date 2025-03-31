@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./CardSection.css"; 
-
+import React, { useState } from "react";
+import "./CardSection.css";
 
 const CardSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const cards = [
     {
-      img: "./l1.png",
+      img: "./l1.png", // Ensure images are in the public/images folder
       title: "UFAR",
       description:
         "The French University in Armenia is a higher education institution established in 2000 within the framework of the 1995 Agreement on Cultural, Scientific and Technical Cooperation between the Governments of Armenia and France.",
@@ -37,6 +33,8 @@ const CardSection = () => {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0); // State for current index
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? cards.length - 1 : prevIndex - 1
@@ -52,21 +50,13 @@ const CardSection = () => {
   const visibleCards = () => {
     const visible = [];
     const totalCards = cards.length;
-  
+
     for (let i = 0; i < Math.min(4, totalCards); i++) {
       visible.push(cards[(currentIndex + i) % totalCards]);
     }
-  
+
     return visible;
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 3000);
-  
-    return () => clearInterval(interval);
-  }, [cards.length]);
 
   return (
     <section className="card-section">
@@ -74,7 +64,7 @@ const CardSection = () => {
         <h2 className="section-title">Featured Universities</h2>
         <div className="carousel">
           <button className="carousel-arrow left-arrow" onClick={handlePrev}>
-            &
+            &#8249;
           </button>
           <div className="card-grid">
             {visibleCards().map((card, index) => (
@@ -82,19 +72,19 @@ const CardSection = () => {
                 <img src={card.img} className="card-img" alt={card.title} />
                 <h3 className="card-title">{card.title}</h3>
                 <p className="card-description">{card.description}</p>
-                <Link
-                  to={card.link}
+                <a
+                  href={card.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="card-button"
                 >
                   Learn More
-                </Link>
+                </a>
               </div>
             ))}
           </div>
           <button className="carousel-arrow right-arrow" onClick={handleNext}>
-            &
+            &#8250;
           </button>
         </div>
       </div>
