@@ -30,8 +30,8 @@ export default function App() {
     <>
       <Navbar />
       <Banner
-        gifUrl="./banner1.gif"
-        linkUrl="https://blue-mushroom-0d8eed61e.6.azurestaticapps.net/"
+        jpgUrl="./banner1.jpg"
+        linkUrl="https://ufar.am/admission/bachelors"
         altText="Promotional Banner"
       />
       <main className="content-wrapper">

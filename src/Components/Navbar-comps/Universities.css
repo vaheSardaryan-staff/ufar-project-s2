@@ -1,56 +1,174 @@
+/* General Styling for the Universities Page */
+.unique-universities-page {
+  font-family: "Roboto", Arial, sans-serif;
+  padding: 30px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00788a;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* University Card Styling */
 .unique-university-card {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 90%;
-    margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px auto;
+}
+
+.unique-university-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Section */
+.col-md-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 12px 0 0 12px;
+}
+
+.unique-university-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.unique-university-image:hover {
+  transform: scale(1.05);
+}
+
+/* Card Body Section */
+.unique-card-body {
+  padding: 20px;
+}
+
+.unique-card-title {
+  font-size: 1.8rem;
+  color: #00788a;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.unique-card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Button Styling */
+.unique-btn-primary {
+  background-color: #00788a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.unique-btn-primary:hover {
+  background-color: #005f6b;
+  transform: scale(1.05);
+}
+
+.unique-btn-primary:active {
+  transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .unique-university-card {
+    flex-direction: column;
+    text-align: center;
   }
-  .unique-university-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  }
+
   .col-md-4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 10px;
+    border-radius: 12px 12px 0 0;
   }
-  .unique-university-image {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-    border-radius: 10px 0 0 10px;
-  }
+
   .unique-card-body {
-    padding: 20px;
+    padding: 15px;
   }
+
   .unique-card-title {
     font-size: 1.5rem;
-    color: #00788A;
-    font-weight: bold;
   }
+
   .unique-card-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
+    font-size: 0.95rem;
   }
+
   .unique-btn-primary {
-    background-color: #00788A;
-    color: #ffffff;
-    border: none;
+    font-size: 0.9rem;
     padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  .unique-btn-primary:hover {
-    background-color: #005f6b;
-    transform: scale(1.05);
+
+  .unique-card-title {
+    font-size: 1.3rem;
   }
-  .unique-btn-primary:active {
-    transform: scale(1);
+
+  .unique-card-text {
+    font-size: 0.9rem;
   }
+
+  .unique-btn-primary {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+}
+
+.search-bar-container {
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #00788a;
+}

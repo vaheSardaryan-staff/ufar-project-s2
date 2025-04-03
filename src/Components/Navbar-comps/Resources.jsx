@@ -1,63 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import resourcesData from "../../data/resourcesData"; // Import the resources data
 import "./Resources.css";
 
 const Resources = () => {
-  const books = [
-    {
-      id: 1,
-      name: "Angleren - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_1%202017-18.pdf",
-      image: "book1.png",
-    },
-    {
-      id: 2,
-      name: "Angleren - shtemaran 2",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_2%202017-18.pdf",
-      image: "book2.png",
-    },
-    {
-      id: 3,
-      name: "Angleren - shtemaran 3",
-      pdf: "http://www.atc.am/files/shtemaranner/2017-2018/ENGLISH%20SHTEM_3%202017-18.pdf",
-      image: "book3.png",
-    },
-    {
-      id: 4,
-      name: "Ruseren - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Russian_1.pdf",
-      image: "book4.jpg",
-    },
-    {
-      id: 5,
-      name: "Ruseren - shtemaran 2",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Russian_2.pdf",
-      image: "book5.jpg",
-    },
-    {
-      id: 6,
-      name: "Ruseren - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Russian_3.pdf",
-      image: "book6.jpg",
-    },
-    {
-      id: 7,
-      name: "Qimia - shtemaran 1",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Chemistry_1.pdf",
-      image: "book7.jpg",
-    },
-    {
-      id: 8,
-      name: "Qimia - shtemaran 2",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Chemistry_2.pdf",
-      image: "book8.jpg",
-    },
-    {
-      id: 9,
-      name: "Qimia - shtemaran 3",
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Chemistry_3.pdf",
-      image: "book9.jpg",
-    },
-  ];
+  const [selectedSubject, setSelectedSubject] = useState("All");
+
+  // Extract unique subjects from resourcesData
+  const subjects = ["All", ...new Set(resourcesData.map((resource) => resource.subject))];
+
+  // Filter resources based on the selected subject
+  const filteredResources =
+    selectedSubject === "All"
+      ? resourcesData
+      : resourcesData.filter((book) => book.subject === selectedSubject);
 
   return (
     <div className="unique-resources-page">
@@ -67,8 +22,27 @@ const Resources = () => {
           Access helpful resources and guides for university applications.
         </p>
 
+        {/* Filter Dropdown */}
+        <div className="filter-container text-center mb-4">
+          <label htmlFor="subject-filter" className="filter-label">
+            Filter by Subject:
+          </label>
+          <select
+            id="subject-filter"
+            className="filter-dropdown"
+            value={selectedSubject}
+            onChange={(e) => setSelectedSubject(e.target.value)}
+          >
+            {subjects.map((subject, index) => (
+              <option key={index} value={subject}>
+                {subject}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="row">
-          {books.map((book) => (
+          {filteredResources.map((book) => (
             <div key={book.id} className="col-md-4 mb-4">
               <div className="unique-resources-card">
                 <img

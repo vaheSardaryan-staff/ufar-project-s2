@@ -1,35 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Careers.css"; 
+import careerData from "../../data/careerData"; // Import career data
+import "./Careers.css";
 
 const Careers = () => {
-  const professions = [
-    "Software Engineer",
-    "Data Scientist",
-    "Doctor (Physician)",
-    "Teacher",
-    "Mechanical Engineer",
-    "Graphic Designer",
-    "Psychologist",
-    "Marketing Specialist",
-    "Lawyer",
-    "Architect",
-    "Nurse",
-    "Accountant",
-    "Electrician",
-    "Civil Engineer",
-    "Journalist",
-    "UX/UI Designer",
-    "Cybersecurity Analyst",
-    "Biologist",
-    "Financial Analyst",
-    "Social Worker",
-  ];
+  // Extract profession titles from careerData
+  const professions = Object.values(careerData).map((career) => career.title);
 
   const [currentPage, setCurrentPage] = useState(1);
   const professionsPerPage = 10;
 
-  
   const indexOfLastProfession = currentPage * professionsPerPage;
   const indexOfFirstProfession = indexOfLastProfession - professionsPerPage;
   const currentProfessions = professions.slice(
@@ -37,29 +17,27 @@ const Careers = () => {
     indexOfLastProfession
   );
 
-  
   const totalPages = Math.ceil(professions.length / professionsPerPage);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      scrollToTop(); 
+      scrollToTop();
     }
   };
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      scrollToTop(); 
+      scrollToTop();
     }
   };
 
   const scrollToTop = () => {
-    
     const scrollContainer = document.documentElement || document.body;
     scrollContainer.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
 

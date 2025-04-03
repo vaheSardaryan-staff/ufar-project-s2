@@ -1,84 +1,164 @@
+/* General Page Styling */
 .careers-page {
-    font-family: Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* Title Styling */
+.careers-title {
+  font-size: 2rem;
+  color: #00788a;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Careers List Styling */
+.careers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.careers-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.careers-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Profession Title Styling */
+.careers-item span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Details Button Styling */
+.details-button {
+  background-color: #00788a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-button:hover {
+  background-color: #005f6b;
+  transform: scale(1.05);
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.pagination-button {
+  background-color: #00788a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #005f6b;
+  transform: scale(1.05);
+}
+
+.pagination-info {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .careers-page {
     padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    min-height: 100vh;
   }
-  
+
   .careers-title {
     font-size: 2rem;
-    color: #00788a;
-    margin-bottom: 20px;
   }
-  
-  .careers-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
+
   .careers-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .careers-item span {
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .careers-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-  }
-  
+
   .details-button {
-    background-color: #00788a;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    padding: 8px 15px;
   }
-  
-  .details-button:hover {
-    background-color: #005f6b;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
+
   .pagination-button {
-    background-color: #00788a;
-    color: #ffffff;
-    border: none;
+    font-size: 0.9rem;
     padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  
-  .pagination-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  .pagination-button:hover:not(:disabled) {
-    background-color: #005f6b;
-  }
-  
+
   .pagination-info {
     font-size: 1rem;
-    color: #555;
-  }  
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-title {
+    font-size: 1.8rem;
+  }
+
+  .careers-item span {
+    font-size: 1rem;
+  }
+
+  .details-button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .pagination-button {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+
+  .pagination-info {
+    font-size: 0.9rem;
+  }
+}

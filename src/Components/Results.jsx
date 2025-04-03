@@ -9,34 +9,28 @@ const Results = () => {
 
   return (
     <div className="results-page">
-      <h1>Your Top Career Matches</h1>
+      <h1 className="results-title">Your Top Career Matches</h1>
       <div className="results-grid">
         {results.map((result) => (
-          <div key={result.id} className="result-card">
-            <div className="result-icon">{result.icon}</div>
-            <h2 className="result-title">{result.title}</h2>
-            <p className="result-description">{result.description}</p>
+          <div key={result.id} className="results-card">
+            <div className="results-icon">{result.icon}</div>
+            <h2 className="results-card-title">{result.title}</h2>
+            <p className="results-card-description">{result.description}</p>
             <button
-              className="btn-primary"
-              onClick={() => navigate(`/career-details/${result.id}`)} // Navigate to Careers with ID
+              className="results-btn-primary"
+              onClick={() => navigate(`/full-analysis?profession=${result.id}`)}
             >
-              Learn More
+              Go to Full Analysis
             </button>
           </div>
         ))}
       </div>
       <div className="results-actions">
         <button
-          className="btn-secondary"
+          className="results-btn-secondary"
           onClick={() => navigate("/questionnaire")}
         >
           Retake Test
-        </button>
-        <button
-          className="btn-primary"
-          onClick={() => navigate("/full-analysis")}
-        >
-          Go to Full Analysis
         </button>
       </div>
     </div>
