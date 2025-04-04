@@ -10,7 +10,7 @@ import html2canvas from "html2canvas";
 
 const FullAnalysis = () => {
   const [selectedTutor, setSelectedTutor] = useState(null);
-  const [showSupportPopup, setShowSupportPopup] = useState(false); // Stfdate vcfor support popup
+  const [showSupportPopup, setShowSupportPopup] = useState(false);
   const [supportForm, setSupportForm] = useState({
     email: "",
     name: "",
