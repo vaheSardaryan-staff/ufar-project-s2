@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import careerData from "../data/careerData";
 import tutorsData from "../data/tutorsData";
+import resourcesData from "../data/resourcesData";
 import universitiesData from "../data/universitiesData";
 import "./FullAnalysis.css";
 import jsPDF from "jspdf";
@@ -197,6 +198,69 @@ const FullAnalysis = () => {
           fallbackUniversities
         )}
       </div>
+
+        {/* Useful Resources Section */}
+<div className="useful-resources-section">
+  <h2 className="useful-resources-title">Useful Resources for Preparation</h2>
+  {relatedUniversities.length > 0 ? (
+    (() => {
+      // Step 1: Extract all unique exam subjects from faculties
+      const allExamSubjects = new Set();
+      relatedUniversities.forEach((university) => {
+        university.faculties.forEach((faculty) => {
+          if (Array.isArray(faculty.examSubjects)) {
+            faculty.examSubjects.forEach((subject) => allExamSubjects.add(subject));
+          }
+        });
+      });
+
+      // Convert Set to Array
+      const examSubjectsArray = Array.from(allExamSubjects);
+
+      console.log("Extracted Exam Subjects:", examSubjectsArray);
+
+      // Step 2: Match resources with exam subjects
+      const resourcesBySubject = examSubjectsArray.map((subject) => {
+        const relatedResources = resourcesData.filter(
+          (resource) =>
+            resource.subject.toLowerCase() === subject.toLowerCase() // Exact match
+        );
+        return { subject, resources: relatedResources };
+      });
+
+      console.log("Resources By Subject:", resourcesBySubject);
+
+      // Step 3: Filter and render resources
+      const filteredResources = resourcesBySubject.filter(({ resources }) => resources.length > 0);
+
+      if (filteredResources.length === 0) {
+        return <p className="no-resources-message">No resources available for the selected profession.</p>;
+      }
+
+      return (
+        <div>
+          {filteredResources.map(({ subject, resources }) => (
+            <div key={subject} className="resource-section">
+              <h3>{subject}</h3>
+              <ul>
+                {resources.map((resource) => (
+                  <li key={resource.id}>
+                    <a href={resource.pdf} target="_blank" rel="noopener noreferrer">
+                      {resource.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      );
+    })()
+  ) : (
+    <p className="no-resources-message">No resources available for the selected profession.</p>
+  )}
+</div>
+      
 
       <div className="full-analysis-section">
         <h2 className="full-analysis-section-title">Available Tutors</h2>
