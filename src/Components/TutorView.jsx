@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import tutorsData from "../data/tutorsData.js"; // Import the tutors data
+import tutorsData from "../data/tutorsData.js";
 import "./TutorView.css";
 
 const TutorView = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false); // State to manage popup visibility
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const { id } = useParams();
 
-  // Find the tutor by ID
   const tutor = tutorsData.find((tutor) => tutor.id === parseInt(id));
 
   if (!tutor) {
     return <p>Tutor not found</p>;
   }
 
-  // Function to toggle the popup
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
@@ -26,7 +24,6 @@ const TutorView = () => {
   return (
     <section className="tutor-view-section">
       <div className="tutor-container">
-        {/* Tutor Profile */}
         <div className="tutor-profile">
           <img
             src={tutor.profilePicture}
@@ -37,7 +34,6 @@ const TutorView = () => {
           <p className="tutor-title">{tutor.title}</p>
         </div>
 
-        {/* Tutor Details */}
         <div className="tutor-details">
           <p>
             <i className="fas fa-book"></i> <strong>Subjects:</strong> {tutor.subjects.join(", ")}
@@ -56,7 +52,6 @@ const TutorView = () => {
           </button>
         </div>
 
-        {/* About Section */}
         <div className="tutor-about">
           <h3>About</h3>
           <p>{tutor.bio}</p>
@@ -64,7 +59,6 @@ const TutorView = () => {
           <p>{tutor.qualifications}</p>
         </div>
 
-        {/* Reviews Section */}
         <div className="tutor-reviews">
           <h3>Reviews</h3>
           {tutor.reviews.map((review, index) => (
@@ -77,7 +71,6 @@ const TutorView = () => {
         </div>
       </div>
 
-      {/* Popup for Contact Information */}
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup-content">

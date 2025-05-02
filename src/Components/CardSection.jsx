@@ -4,14 +4,14 @@ import "./CardSection.css";
 const CardSection = () => {
   const cards = [
     {
-      img: "./l1.png", // Ensure images are in the public/images folder
+      img: "./l1.png",
       title: "UFAR",
       description:
         "The French University in Armenia is a higher education institution established in 2000 within the framework of the 1995 Agreement on Cultural, Scientific and Technical Cooperation between the Governments of Armenia and France.",
       link: "https://www.ufar.am/",
     },
     {
-      img: "./l2.jpeg",
+      img: "./l2.jpg",
       title: "NPUA",
       description:
         "During its 91 years of operation, the Polytechnic has given the country more than 130 thousand graduates, who have shaped the engineering potential, scientific and technical community, and industrial leadership of the Republic of Armenia.",
@@ -33,7 +33,7 @@ const CardSection = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0); // State for current index
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>

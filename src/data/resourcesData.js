@@ -203,11 +203,11 @@ const resourcesData = [
         image: "book29.jpg",
     },
     {
-      id: 30,
-      name: "Kensabanutyun - shtemaran 1",
-      subject: "Biology", 
-      pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Biology_1.pdf",
-      image: "book30.jpg",
+        id: 30,
+        name: "Kensabanutyun - shtemaran 1",
+        subject: "Biology", 
+        pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Biology_1.pdf",
+        image: "book30.jpg",
     },
     {
         id: 31,
@@ -223,13 +223,6 @@ const resourcesData = [
       pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Biology_3.pdf",
       image: "book32.jpg",
     },
-    {
-        id: 32,
-        name: "Kensabanutyun - shtemaran 4",
-        subject: "Biology", 
-        pdf: "http://www.atc.am/files/shtemaranner/2015-2016/Biology_4.pdf",
-        image: "book31.jpg",
-      }
 
   ];
   

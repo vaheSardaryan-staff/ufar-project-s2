@@ -1,11 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import careerData from "../../data/careerData"; // Import the career data
+import careerData from "../../data/careerData"; 
 import "./CareerDetails.css";
 
 const CareerDetails = () => {
-  const { profession } = useParams(); // Get the profession ID from the URL
-  const career = careerData[profession]; // Get the career details from the data file
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const { profession } = useParams(); 
+  const career = careerData[profession]; 
 
   if (!career) {
     return (
@@ -15,7 +21,7 @@ const CareerDetails = () => {
     );
   }
 
-  // Use default values for missing fields
+  
   const advantages = career.advantages || [];
   const disadvantages = career.disadvantages || [];
   const visionInArmenia = career.VisionInArmenia || "No vision available for Armenia.";

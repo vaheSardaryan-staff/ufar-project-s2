@@ -102,7 +102,7 @@
   line-height: 1.6;
 }
 
-/* Vision Section */
+
 .career-vision {
   margin-bottom: 30px;
 }
@@ -121,7 +121,7 @@
   margin-bottom: 10px;
 }
 
-/* Hover Effects */
+
 .career-advantages-list li:hover,
 .career-disadvantages-list li:hover {
   color: #00788a;
@@ -129,7 +129,7 @@
   transition: color 0.3s ease-in-out;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .career-header {
     flex-direction: column;

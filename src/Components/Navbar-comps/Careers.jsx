@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import careerData from "../../data/careerData"; // Import career data
+import careerData from "../../data/careerData"; 
 import "./Careers.css";
 
 const Careers = () => {
-  // Extract profession titles from careerData
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const professions = Object.values(careerData).map((career) => career.title);
 
   const [currentPage, setCurrentPage] = useState(1);

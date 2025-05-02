@@ -1,9 +1,15 @@
 import React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import universitiesData from "../../data/universitiesData";
-import "./UniversityDetails.css"; // Import your CSS file for styling
+import "./UniversityDetails.css";
 
 const UniversityDetails = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { id } = useParams();
   const university = universitiesData.find((uni) => uni.id === parseInt(id));
 

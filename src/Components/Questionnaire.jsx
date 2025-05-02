@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Questionnaire.css";
 
@@ -220,6 +220,11 @@ const professions = [
 ];
   
 const Questionnaire = () => {
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState([]);
     const navigate = useNavigate();

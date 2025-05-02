@@ -1,42 +1,42 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
-import tutorsData from "../data/tutorsData"; // Import the tutors data
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import tutorsData from "../data/tutorsData";
 import "./TutorsList.css";
 
 const TutorsList = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState({
     subject: "",
     location: "",
   });
-  const [sortOrder, setSortOrder] = useState("desc"); // Sort by rating (desc or asc)
+  const [sortOrder, setSortOrder] = useState("desc");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const tutorsPerPage = 8; // Number of tutors per page
+  const tutorsPerPage = 8;
 
-  // Extract unique subjects and locations from tutorsData
   const subjects = ["All Subjects", ...new Set(tutorsData.flatMap((tutor) => tutor.subjects))];
   const locations = ["All Locations", ...new Set(tutorsData.map((tutor) => tutor.location))];
 
-  // Handle search input
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Handle filter changes
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
-  // Handle sort order change
   const handleSortChange = (e) => {
     setSortOrder(e.target.value);
   };
 
-  // Filter and sort tutors
   const filteredTutors = tutorsData
     .filter((tutor) => {
-      const tutorName = tutor.name || ""; // Fallback to empty string if name is undefined
+      const tutorName = tutor.name || "";
       return (
         tutorName.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (filters.subject && filters.subject !== "All Subjects"
@@ -55,7 +55,6 @@ const TutorsList = () => {
       }
     });
 
-  // Pagination logic
   const totalPages = Math.ceil(filteredTutors.length / tutorsPerPage);
   const startIndex = (currentPage - 1) * tutorsPerPage;
   const currentTutors = filteredTutors.slice(startIndex, startIndex + tutorsPerPage);
@@ -69,15 +68,14 @@ const TutorsList = () => {
   };
 
   return (
+  
     <section className="tutors-list-section">
       <div className="container">
-        {/* Title and Subtitle */}
         <h1 className="tutors-list-title">Find Your Perfect Tutor</h1>
         <p className="tutors-list-subtitle">
           Search, filter, and sort to find the best tutor for your needs.
         </p>
 
-        {/* Search Bar */}
         <div className="search-bar-container">
           <input
             type="text"
@@ -88,7 +86,6 @@ const TutorsList = () => {
           />
         </div>
 
-        {/* Filters and Sort Options */}
         <div className="filters-container">
           <select name="subject" onChange={handleFilterChange}>
             {subjects.map((subject, index) => (
@@ -110,7 +107,6 @@ const TutorsList = () => {
           </select>
         </div>
 
-        {/* Tutors List */}
         <div className="tutors-grid">
           {currentTutors.map((tutor) => (
             <div className="tutor-card" key={tutor.id}>
@@ -127,7 +123,6 @@ const TutorsList = () => {
               <p className="tutor-rating">Rating: ⭐ {tutor.rating}</p>
               <p className="tutor-price">{tutor.price}</p>
               <p className="tutor-bio">{tutor.bio}</p>
-              {/* View More Button */}
               <Link to={`/tutors/${tutor.id}`} className="view-more-button">
                 View More
               </Link>
@@ -135,7 +130,6 @@ const TutorsList = () => {
           ))}
         </div>
 
-        {/* Pagination */}
         <div className="pagination">
           <button
             className="pagination-button"

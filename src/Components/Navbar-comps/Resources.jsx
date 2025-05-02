@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import resourcesData from "../../data/resourcesData"; // Import the resources data
+import resourcesData from "../../data/resourcesData"; 
 import "./Resources.css";
 
 const Resources = () => {
   const [selectedSubject, setSelectedSubject] = useState("All");
 
-  // Extract unique subjects from resourcesData
+  
   const subjects = ["All", ...new Set(resourcesData.map((resource) => resource.subject))];
 
-  // Filter resources based on the selected subject
+  
   const filteredResources =
     selectedSubject === "All"
       ? resourcesData
@@ -22,7 +22,7 @@ const Resources = () => {
           Access helpful resources and guides for university applications.
         </p>
 
-        {/* Filter Dropdown */}
+        {}
         <div className="filter-container text-center mb-4">
           <label htmlFor="subject-filter" className="filter-label">
             Filter by Subject:

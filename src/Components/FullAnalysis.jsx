@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import careerData from "../data/careerData";
 import tutorsData from "../data/tutorsData";
@@ -9,6 +9,11 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 const FullAnalysis = () => {
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const [selectedTutor, setSelectedTutor] = useState(null);
   const [showSupportPopup, setShowSupportPopup] = useState(false);
   const [supportForm, setSupportForm] = useState({
@@ -40,7 +45,7 @@ const FullAnalysis = () => {
     e.preventDefault();
     console.log("Support Form Submitted:", supportForm);
     alert("Your support request has been submitted!");
-    setShowSupportPopup(false); // Close the popup after submission
+    setShowSupportPopup(false);
     setSupportForm({
       email: "",
       name: "",
@@ -107,13 +112,13 @@ const FullAnalysis = () => {
   ) : null;
 
   const saveAsPDF = () => {
-    const content = document.querySelector(".full-analysis-page"); // Select the content to export
-    const pdf = new jsPDF("p", "mm", "a4"); // Create a new PDF in A4 format
+    const content = document.querySelector(".full-analysis-page");
+    const pdf = new jsPDF("p", "mm", "a4");
 
     html2canvas(content, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 297; // A4 height in mm
+      const imgWidth = 210;
+      const pageHeight = 297;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       let heightLeft = imgHeight;
       let position = 0;
@@ -128,7 +133,7 @@ const FullAnalysis = () => {
         heightLeft -= pageHeight;
       }
 
-      pdf.save(`${profession.title}-analysis.pdf`); // Save the PDF with a dynamic filename
+      pdf.save(`${profession.title}-analysis.pdf`);
     });
   };
 
@@ -166,7 +171,7 @@ const FullAnalysis = () => {
                 <th>Exam Subjects</th>
                 <th>Scholarships</th>
                 <th>Tuition</th>
-                <th>Apply</th> {/* New column for Apply */}
+                <th>Apply</th>
               </tr>
             </thead>
             <tbody>
@@ -199,12 +204,10 @@ const FullAnalysis = () => {
         )}
       </div>
 
-        {/* Useful Resources Section */}
 <div className="useful-resources-section">
   <h2 className="useful-resources-title">Useful Resources for Preparation</h2>
   {relatedUniversities.length > 0 ? (
     (() => {
-      // Step 1: Extract all unique exam subjects from faculties
       const allExamSubjects = new Set();
       relatedUniversities.forEach((university) => {
         university.faculties.forEach((faculty) => {
@@ -214,23 +217,20 @@ const FullAnalysis = () => {
         });
       });
 
-      // Convert Set to Array
       const examSubjectsArray = Array.from(allExamSubjects);
 
       console.log("Extracted Exam Subjects:", examSubjectsArray);
 
-      // Step 2: Match resources with exam subjects
       const resourcesBySubject = examSubjectsArray.map((subject) => {
         const relatedResources = resourcesData.filter(
           (resource) =>
-            resource.subject.toLowerCase() === subject.toLowerCase() // Exact match
+            resource.subject.toLowerCase() === subject.toLowerCase()
         );
         return { subject, resources: relatedResources };
       });
 
       console.log("Resources By Subject:", resourcesBySubject);
 
-      // Step 3: Filter and render resources
       const filteredResources = resourcesBySubject.filter(({ resources }) => resources.length > 0);
 
       if (filteredResources.length === 0) {
@@ -321,7 +321,6 @@ const FullAnalysis = () => {
           <p>No tutors available for the selected profession.</p>
         )}
 
-        {/* Popup for Tutor Details */}
         {selectedTutor && (
           <div className="tutor-popup">
             <div className="tutor-popup-content">

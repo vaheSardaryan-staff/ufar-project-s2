@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import universitiesData from "../../data/universitiesData"; // Import the university data
+import universitiesData from "../../data/universitiesData"; 
 import "./Universities.css";
 
 const Universities = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // State to track the search input
 
-  // Filter universities based on the search term
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [searchTerm, setSearchTerm] = useState(""); 
+
+  
   const filteredUniversities = universitiesData.filter((university) =>
     university.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -17,7 +22,7 @@ const Universities = () => {
         <h1 className="text-center my-4">Universities</h1>
         <p className="text-center mb-4">Explore top universities around the world.</p>
 
-        {/* Search Bar */}
+        {}
         <div className="search-bar-container text-center mb-4">
           <input
             type="text"
@@ -28,7 +33,7 @@ const Universities = () => {
           />
         </div>
 
-        {/* Universities List */}
+        {}
         {filteredUniversities.length > 0 ? (
           filteredUniversities.map((university) => (
             <div key={university.id} className="unique-university-card mb-4">
