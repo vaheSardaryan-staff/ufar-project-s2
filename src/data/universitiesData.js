@@ -49,7 +49,7 @@ const universitiesData = [
     {
       id: 2,
       name: "Polytech",
-      image: "/l2.jpeg",  
+      image: "/l2.jpg",  
       info: "During its 91 years of operation, the Polytechnic has given the country more than 130 thousand graduates, who have shaped the engineering potential, scientific and technical community, and industrial leadership of the Republic of Armenia.",
       industry: "Education",
       activeFaculties: 20,
